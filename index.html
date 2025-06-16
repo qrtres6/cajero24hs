@@ -5,22 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
   <title>Diversion 24 hs</title>
-  <script src="style.css"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  if(!f._fbq)f._fbq=n;n.push=n.loaded=!0;n.version='2.0';
   n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1010381134577257');
+  fbq('init', '1037472827822465');
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1010381134577257&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=1037472827822465&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
   <style>
@@ -87,6 +87,14 @@
       }
       100% {
         background-position: 0% 50%;
+      }
+    }
+    @keyframes buttonMove {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(5px);
       }
     }
     header {
@@ -263,6 +271,29 @@
     .animate-slide-fade {
       animation: slideFadeIn 0.5s ease-in-out;
     }
+
+    #menu-button {
+      background: linear-gradient(135deg, #6b7280, #d1d5db, #6b7280); /* Metallic gradient */
+      background-size: 200% 200%; /* For animation effect */
+      animation: buttonMove 1s infinite, shine 3s linear infinite; /* Add shine animation */
+      color: white;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+      border: 1px solid #4b5563; /* Metallic border */
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    #menu-button:hover {
+      background: linear-gradient(135deg, #d1d5db, #6b7280, #d1d5db); /* Reverse gradient on hover */
+    }
   </style>
 </head>
 <body class="text-white font-sans">
@@ -282,7 +313,7 @@
 
   <!-- Header Menu Button -->
   <header class="fixed top-0 left-0 w-full bg-transparent z-30 p-4 flex justify-between items-center">
-    <button id="menu-button" class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black text-lg font-bold px-4 py-2 rounded-lg shadow-lg hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 transition duration-300">
+    <button id="menu-button" class="text-lg font-bold px-4 py-2 rounded-lg shadow-lg transition duration-300">
       Premios
     </button>
   </header>
@@ -291,13 +322,11 @@
     <header class="text-center">
       <img src="/logo_principal.png" alt="Logo Principal" class="mx-auto mb-2" onerror="imageLoadError(this)">
       <img src="/bono-imagen.png" alt="Bono Imagen" class="mx-auto mb-1" onerror="imageLoadError(this)">
-      <p class="text-lg font-bold text-gray-300 mb-2" style="text-shadow: 0 0 8px #00ffcc, 0 0 16px #00ffcc;">
-        Escribinos ahora apretando en el botón de abajo
-      </p>
+      <p class="text-md drop-shadow-md text-yellow-400 mb-2">💬 Escribinos ahora apretando en el botón de abajo</p>
     </header>
 
     <main class="text-center">
-      <a id="btn-wsp" href="https://wa.link/2h7xft" target="_blank" class="block" onclick="trackWhatsAppLeadEvent()">
+      <a id="btn-wsp" href="#" target="_blank" class="block" onclick="trackWhatsAppLeadEvent()">
         <img src="/whatsapp-icon.png" alt="WhatsApp Icon" class="mx-auto transition-transform duration-300 ease-in-out drop-shadow-lg animate-shake" onerror="imageLoadError(this)">
       </a>
       <p class="text-gray-500 mt-0 text-base drop-shadow-md flex items-center justify-center gap-2">
@@ -408,6 +437,9 @@
           if (intentos > 1) {
             // Reintentamos con un delay
             setTimeout(() => cargarNumero(intentos - 1), 1000);
+          } else {
+            // Si fallan todos los intentos, mostramos error visual
+            mostrarError("No se pudo cargar el número de contacto");
           }
         });
     }
@@ -418,7 +450,29 @@
     // Update the WhatsApp link
     function updateWhatsAppLink() {
       if (numero) {
-        const whatsappLink = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+        // Asegurarnos que el número tenga el formato correcto
+        let formattedNumber = numero.trim();
+        
+        // Si el número no comienza con '+', agregar el código de país de Argentina
+        if (!formattedNumber.startsWith('+')) {
+          // Si comienza con 0, lo quitamos
+          if (formattedNumber.startsWith('0')) {
+            formattedNumber = formattedNumber.substring(1);
+          }
+          
+          // Si comienza con 15, lo quitamos (formato argentino)
+          if (formattedNumber.startsWith('15')) {
+            formattedNumber = formattedNumber.substring(2);
+          }
+          
+          // Agregamos el código de país de Argentina (+54)
+          formattedNumber = "+54" + formattedNumber;
+        }
+        
+        // Eliminamos cualquier espacio que pudiera haber
+        formattedNumber = formattedNumber.replace(/\s/g, '');
+        
+        const whatsappLink = `https://wa.me/${formattedNumber}?text=${encodeURIComponent(mensaje)}`;
         const btnWsp = document.getElementById("btn-wsp");
         if (btnWsp) {
           btnWsp.href = whatsappLink;
@@ -440,42 +494,11 @@
 
     function trackWhatsAppLeadEvent() {
       if (typeof fbq === 'function') {
-        // Generate unique event ID for deduplication
-        const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        
         fbq('track', 'Lead', {
           content_name: 'WhatsApp Button Click',
           content_category: 'Engagement',
-          value: 1.00,
-          currency: 'ARS'
-        }, {
-          eventID: eventId
         });
-        
-        console.log('Evento Lead enviado a Meta Pixel con ID:', eventId);
-        
-        // Send to server for Conversion API deduplication
-        fetch('/api/track-lead', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            eventId: eventId,
-            eventName: 'Lead',
-            userData: {
-              client_ip_address: '',
-              client_user_agent: navigator.userAgent
-            },
-            customData: {
-              content_name: 'WhatsApp Button Click',
-              content_category: 'Engagement',
-              value: 1.00,
-              currency: 'ARS'
-            }
-          })
-        }).catch(err => console.log('Server tracking error:', err));
-        
+        console.log('Evento Lead enviado a Meta Pixel');
       } else {
         console.warn('Meta Pixel no está disponible');
       }

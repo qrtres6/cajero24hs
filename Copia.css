@@ -3,15 +3,6 @@
  `+b+n("^")}return" "+i(h)+s(f)}).join(`
 `)}toString(){let e=this.showSourceCode();return e&&(e=`
 
-.bloque1 .contenedor-negro {
-		background: rgba(0, 0, 0, 0.7);
-		border-radius: 20px;
-		padding: 60px 20px 20px;
-		max-width: 430px;
-		margin: 0 auto;
-		position: relative;
-	}
-
 `+e+`
 `),this.name+": "+this.message+e}};cc.exports=Jt;Jt.default=Jt});var fa=x((x3,dc)=>{u();"use strict";var pc={after:`
 `,beforeClose:`
@@ -62,6 +53,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   Learn more at:
   https://github.com/browserslist/browserslist#readme
   https://twitter.com/browserslist
+
+	.bloque1 .contenedor-negro {
+		background: rgba(0, 0, 0, 0.7);
+		border-radius: 20px;
+		padding: 60px 20px 20px;
+		max-width: 430px;
+		margin: 0 auto;
+		position: relative;
 
 `;function V5(r){return Object.prototype.toString.apply(r)==="[object Object]"}var lf=new Map;function H5(r,e){e.browsers.selected.length!==0&&(e.add.selectors.length>0||Object.keys(e.add).length>2||r.warn(`Autoprefixer target browsers do not need any prefixes.You do not need Autoprefixer anymore.
 Check your Browserslist config to be sure that your targets are set up correctly.
