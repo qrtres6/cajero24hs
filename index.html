@@ -1,508 +1,98 @@
 
 <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="es">
+
+<!-- Mirrored from redluxor.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Jun 2025 16:46:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
-  <title>Diversion 24 hs</title>
-  <script src="style.css"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex">
+ <meta property="og:image" content="logo.png" /> 
+ <title>🍀​ Clic en el Botón de WhatsApp 🎰</title>
+  <link rel="icon" type="image/png" href="logo.png">   <link rel="stylesheet" href="estilo.css">  
   
-  https://cdn.tailwindcss.com
-   <style>
-    @keyframes shake {
-      0%, 100% {
-        transform: translateX(0);
-      }
-      25% {
-        transform: translateX(-5px);
-      }
-      50% {
-        transform: translateX(5px);
-      }
-      75% {
-        transform: translateX(-5px);
-      }
-    }
-    .animate-shake {
-      animation: shake 1s infinite;
-    }
-    body {
-      position: relative;
-      color: #f3f4f6;
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      height: 100vh; /* Ajusta la altura al 100% del viewport */
-      overflow: hidden; /* Evita el desplazamiento */
-      display: flex;
-      justify-content: center; /* Centra el contenido horizontalmente */
-      align-items: center; /* Centra el contenido verticalmente */
-      text-align: center; /* Alineación del texto */
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px; /* Espaciado entre elementos */
-      width: 100%;
-      max-width: 500px; /* Limitar el ancho máximo */
-      padding: 16px;
-      position: relative; /* Asegura que el contenido no se vea afectado por el fondo */
-      z-index: 1; /* Coloca el contenido por encima del fondo */
-    }
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('fondo-landing.png') no-repeat center center fixed; /* Fondo con la imagen fondo-landing */
-      background-size: cover; /* Asegura que el fondo cubra toda la página */
-      filter: blur(8px); /* Aplica un efecto de difuminado al fondo */
-      z-index: 0; /* Coloca el fondo detrás del contenido */
-    }
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-    @keyframes buttonMove {
-      0%, 100% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(5px);
-      }
-    }
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px; /* Reducido de 8px para acercar elementos */
-      padding: 0 8px;
-      margin-bottom: 0; /* Eliminado el margen inferior */
-    }
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px; /* Espaciado ajustado entre texto y botón */
-      padding: 0 8px;
-      margin-top: -10px; /* Ajuste para subir el contenido */
-    }
-    footer {
-      position: fixed;
-      bottom: 10px;
-      padding: 0 8px;
-    }
-    header img {
-      animation: fadeIn 1.5s ease-in-out;
-      max-width: 95%; /* Increased from 90% */
-      width: 320px; /* Increased from 280px */
-      margin-bottom: 8px; /* Reducido de mb-4 */
-    }
-    main a img {
-      border-radius: 12px; /* Bordes redondeados */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      max-width: 100%; /* Aumenta el tamaño máximo del botón */
-      width: 400px; /* Reducido de 480px */
-      padding: 12px; /* Reducido de 14px */
-      margin: 0 auto;
-      animation: pulse 2s infinite; /* Animación de pulso */
-    }
-    main a img:hover {
-      transform: none; /* Eliminado el efecto de escala */
-      box-shadow: none; /* Eliminado el efecto de sombra */
-    }
-    footer p {
-      font-size: 0.9rem; /* Aumenta el tamaño del texto del footer */
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-    }
-    .notification {
-      position: fixed;
-      top: 10px; /* Cambiado de bottom a top */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      background: linear-gradient(90deg, #34d399, #059669);
-      color: white;
-      padding: 4px 16px; /* Ajustado para menor altura */
-      font-size: 0.75rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      width: 320px; /* Incrementado de 260px */
-      max-width: 90%; /* Ajustado para mayor ancho */
-      height: auto;
-      min-height: 30px; /* Reducido de 35px */
-      opacity: 0;
-      animation: fadeInOut 10s infinite; /* Aumentado de 6s a 10s */
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
-    }
-    @keyframes fadeInOut {
-      0% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      20%, 80% { /* Aumentado el tiempo visible */
-        opacity: 1;
-        transform: translateY(0);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-    }
-    @media (max-width: 480px) {
-      body {
-        padding: 5px;
-        min-height: 100vh;
-        height: -webkit-fill-available; /* Para iOS */
-      }
-      
-      header p {
-        font-size: 1.3rem; /* Increased font size for bonus text */
-      }
+	
+<!-- Meta Pixel Code -->
+<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'../connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '');	fbq('track', 'PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=&amp;ev=PageView&amp;noscript=1" /></noscript><!-- End Meta Pixel Code -->
 
-      header img {
-        width: 260px; /* Increased from 200px for mobile */
-      }
-
-      main {
-        margin-top: -5px; /* Ajuste para móviles */
-      }
-
-      main a img {
-        width: 320px; /* Reducido de 360px */
-        padding: 10px; /* Reducido de 12px */
-      }
-
-      footer p {
-        font-size: 1rem;
-      }
-      
-      .text-yellow-400 {
-        font-size: 1.1rem;
-      }
-
-      .notification {
-        top: 5px; /* Ajustado para móviles */
-        font-size: 0.7rem;
-        padding: 3px 12px; /* Ajustado para móviles */
-        min-height: 25px; /* Reducido de 30px */
-        width: 280px; /* Incrementado de 220px */
-        gap: 3px;
-      }
-
-      footer {
-        bottom: 5px;
-      }
-
-      footer .flex {
-        flex-wrap: wrap; /* Permite que los íconos se ajusten en varias líneas si es necesario */
-        gap: 8px; /* Reduce el espacio entre íconos */
-      }
-      footer img {
-        height: 10%; /* Reduce el tamaño de los íconos en pantallas pequeñas */
-        max-height: 40px; /* Tamaño máximo para evitar que sean demasiado grandes */
-      }
-      footer p {
-        font-size: 0.8rem; /* Reduce el tamaño del texto para móviles */
-        margin-top: 8px; /* Añade espacio entre los íconos y el texto */
-      }
-    }
-    /* Toast animation */
-    @keyframes slideFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-slide-fade {
-      animation: slideFadeIn 0.5s ease-in-out;
-    }
-
-    #menu-button {
-      background: linear-gradient(135deg, #6b7280, #d1d5db, #6b7280); /* Metallic gradient */
-      background-size: 200% 200%; /* For animation effect */
-      animation: buttonMove 1s infinite, shine 3s linear infinite; /* Add shine animation */
-      color: white;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-      font-weight: bold;
-      border: 1px solid #4b5563; /* Metallic border */
-    }
-
-    @keyframes shine {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
-    }
-
-    #menu-button:hover {
-      background: linear-gradient(135deg, #d1d5db, #6b7280, #d1d5db); /* Reverse gradient on hover */
-    }
-  </style>
+<script src="tracker.js" type="text/javascript"></script>
+<script> pageview (,);		</script>
+  
+  
 </head>
-<body class="text-white font-sans">
-  <!-- Sliding Menu -->
-  <div id="menu-overlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden z-40"></div>
-  <div id="menu-panel" class="fixed top-0 left-0 w-3/4 max-w-sm h-full bg-gray-900 text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
-    <div class="p-4">
-      <h2 class="text-lg font-bold mb-4 border-b border-gray-700 pb-2">Premios</h2>
-      <div class="space-y-4 overflow-y-auto h-[calc(100vh-80px)]">
-        <img src="/premio1.jpeg" alt="Premio 1" class="w-full rounded-md border border-gray-700" onerror="imageLoadError(this)">
-        <img src="/premio2.jpeg" alt="Premio 2" class="w-full rounded-md border border-gray-700" onerror="imageLoadError(this)">
-        <img src="/premio3.jpeg" alt="Premio 3" class="w-full rounded-md border border-gray-700" onerror="imageLoadError(this)">
-        <img src="/premio4.jpeg" alt="Premio 4" class="w-full rounded-md border border-gray-700" onerror="imageLoadError(this)">
-      </div>
+<body>
+
+ <section class="bloque1">
+
+   <img src="vip.png" alt="Imagen Superior" class="imagen-superior">
+  <div class="contenedor-negro">
+    <div class="imagen-vertical">
+		 <img src="casino.png" alt="Casino"> 		 <img src="txt.png" alt="Texto">        <button class="boton-imagen shake-vertical" rel='nofollow noreferrer' role='link' id='botónEnviarSolicitud'>
+			  <img src="boton.png" alt="Botón">       </button>
+	   <script type="text/javascript">
+				document.getElementById('botónEnviarSolicitud').addEventListener('click', function() {
+						
+					var wsp='';					var pixel='';					const shareUrl = 'index.html';
+					const shareText = 'Hola, quiero MI BONO para empezar a Jugar';
+					const whatsappUrl = `&text=${encodeURIComponent(shareUrl)}%0A%0A%C2%A1${encodeURIComponent(shareText)}&type=phone_number&app_absent=0`; 
+					window.location.href = 'https://api.whatsapp.com/send?phone=549' + whatsappUrl;
+					
+					conversion(wsp,pixel);													
+
+					fbq('track', 'Purchase', {
+						value: 5,
+						currency: 'USD',
+					});
+				}, false);
+			</script>
+
+  
+    </div>
+    <p class="texto-dorado vibrate-1" style='padding-left:40px;padding-right:40px'></p>
+  </div>
+</section>
+
+<!-- Bloque 2 -->
+<section class="bloque2">
+  <div class="recuadros-horizontales">
+    <div class="recuadro">
+      <img src="box1.png" class="icono">      <p class="texto-recuadro">CBU / CVU</p>
+    </div>
+    <div class="recuadro">
+       <img src="box2.png" class="icono">      <p class="texto-recuadro">ESTAMOS LAS 24HS</p>
+    </div>
+    <div class="recuadro">
+       <img src="box3.png"class="icono">      <p class="texto-recuadro">MINIMA  $0</p>
     </div>
   </div>
+</section>
 
-  <!-- Header Menu Button -->
-  <header class="fixed top-0 left-0 w-full bg-transparent z-30 p-4 flex justify-between items-center">
-    <button id="menu-button" class="text-lg font-bold px-4 py-2 rounded-lg shadow-lg transition duration-300">
-      Premios
-    </button>
-  </header>
+  <!-- Bloque 3 -->
+  <section class="bloque3">
+    <div class="texto-final">
+		Jugar compulsivamente es perjudicial para la salud.
+		Prohibido el juego de azar a menores de 18 años.
+	</div>
+      <img src="mas18.png" >  </section>
 
-  <div class="container">
-    <header class="text-center">
-      <img src="/logo_principal.png" alt="Logo Principal" class="mx-auto mb-2" onerror="imageLoadError(this)">
-      <img src="/bono-imagen.png" alt="Bono Imagen" class="mx-auto mb-1" onerror="imageLoadError(this)">
-      <p class="text-md drop-shadow-md text-yellow-400 mb-2">💬 Escribinos ahora apretando en el botón de abajo</p>
-    </header>
+<a href="#" onclick="document.getElementById('botónEnviarSolicitud').click(); return false;" class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+      <img src="wsp.png" alt="WhatsApp" /></a>
 
-    <main class="text-center">
-      <a id="btn-wsp" href="#" target="_blank" class="block" onclick="trackWhatsAppLeadEvent()">
-        <img src="/whatsapp-icon.png" alt="WhatsApp Icon" class="mx-auto transition-transform duration-300 ease-in-out drop-shadow-lg animate-shake" onerror="imageLoadError(this)">
-      </a>
-      <p class="text-gray-500 mt-0 text-base drop-shadow-md flex items-center justify-center gap-2">
-        <img src="/whatsapp-verification-icon.png" alt="WhatsApp Verified Icon" class="h-6" onerror="imageLoadError(this)">
-        Verificado por WhatsApp
-      </p>
-      <div class="flex flex-wrap justify-center items-center gap-4 mt-2">
-        <img src="/bank-icon.png" alt="Bank Icon" class="h-12" onerror="imageLoadError(this)">
-        <img src="/mercado-pago-icon.png" alt="Mercado Pago Icon" class="h-12" onerror="imageLoadError(this)">
-        <img src="/uala-icon.png" alt="Ualá Icon" class="h-12" onerror="imageLoadError(this)">
-      </div>
-    </main>
 
-    <footer class="text-center">
-      <p class="text-sm text-gray-400 mt-4">Jugá con responsabilidad +18</p>
-    </footer>
-  </div>
-
-  <script>
-    function imageLoadError(img) {
-      console.error(`Error al cargar imagen: ${img.src}`);
-      img.setAttribute('title', 'Error al cargar imagen: ' + img.src);
-
-      // Intentar rutas alternativas sin mostrar el error visualmente
-      if (img.src.startsWith('http')) return;
-
-      const originalSrc = img.src;
-      const fileName = originalSrc.split('/').pop();
-
-      const paths = [
-        `./${fileName}`,
-        `/${fileName}`,
-        `/images/${fileName}`,
-        `./images/${fileName}`
-      ];
-
-      tryAlternativePaths(img, paths, 0);
-    }
-
-    function tryAlternativePaths(img, paths, index) {
-      if (index >= paths.length) {
-        // Si no encuentra ninguna imagen, hace que sea invisible
-        img.style.opacity = '0'; // Hace la imagen invisible
-        return;
-      }
-
-      const tempImg = new Image();
-      tempImg.onload = function () {
-        img.src = paths[index];
-        console.log(`Imagen cargada con éxito desde: ${paths[index]}`);
-      };
-      tempImg.onerror = function () {
-        tryAlternativePaths(img, paths, index + 1);
-      };
-      tempImg.src = paths[index];
-    }
-
-    let numero = "";
-    let mensaje = "Hola, quiero mas info"; // Updated message
-
-    // Función para mostrar errores visuales
-    function mostrarError(mensaje) {
-      console.error("ERROR:", mensaje);
-      // Crear un elemento de alerta para mostrar el error
-      const errorDiv = document.createElement('div');
-      errorDiv.style.position = 'fixed';
-      errorDiv.style.top = '50%';
-      errorDiv.style.left = '50%';
-      errorDiv.style.transform = 'translate(-50%, -50%)';
-      errorDiv.style.backgroundColor = 'rgba(220, 38, 38, 0.9)';
-      errorDiv.style.color = 'white';
-      errorDiv.style.padding = '20px';
-      errorDiv.style.borderRadius = '8px';
-      errorDiv.style.zIndex = '9999';
-      errorDiv.style.maxWidth = '80%';
-      errorDiv.style.textAlign = 'center';
-      errorDiv.innerHTML = `<strong>ERROR:</strong><br>${mensaje}<br><small>Inténtalo de nuevo más tarde</small>`;
-      document.body.appendChild(errorDiv);
-      
-      // Quitar el temblor del botón de WhatsApp
-      const btnWsp = document.getElementById("btn-wsp");
-      if (btnWsp && btnWsp.querySelector('img')) {
-        btnWsp.querySelector('img').classList.remove('animate-shake');
-      }
-    }
-
-    // Load the number from the Vercel API endpoint - intento múltiple
-    function cargarNumero(intentos = 3) {
-      console.log(`Intentando cargar número... (intento ${4-intentos}/3)`);
-      
-      fetch("/api/numeros")
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(`Error HTTP: ${res.status} al cargar el número`);
-          }
-          return res.json();
-        })
-        .then((data) => {
-          if (!data || !data.numero) {
-            throw new Error("Respuesta de API sin número válido");
-          }
-          console.log("Número obtenido:", data.numero);
-          numero = data.numero;
-          updateWhatsAppLink();
-        })
-        .catch((err) => {
-          console.error(`Error (intento ${4-intentos}/3):`, err);
-          if (intentos > 1) {
-            // Reintentamos con un delay
-            setTimeout(() => cargarNumero(intentos - 1), 1000);
-          } else {
-            // Si fallan todos los intentos, mostramos error visual
-            mostrarError("No se pudo cargar el número de contacto");
-          }
-        });
-    }
-
-    // Iniciar carga del número
-    cargarNumero();
-
-    // Update the WhatsApp link
-    function updateWhatsAppLink() {
-      if (numero) {
-        // Asegurarnos que el número tenga el formato correcto
-        let formattedNumber = numero.trim();
-        
-        // Si el número no comienza con '+', agregar el código de país de Argentina
-        if (!formattedNumber.startsWith('+')) {
-          // Si comienza con 0, lo quitamos
-          if (formattedNumber.startsWith('0')) {
-            formattedNumber = formattedNumber.substring(1);
-          }
-          
-          // Si comienza con 15, lo quitamos (formato argentino)
-          if (formattedNumber.startsWith('15')) {
-            formattedNumber = formattedNumber.substring(2);
-          }
-          
-          // Agregamos el código de país de Argentina (+54)
-          formattedNumber = "+54" + formattedNumber;
-        }
-        
-        // Eliminamos cualquier espacio que pudiera haber
-        formattedNumber = formattedNumber.replace(/\s/g, '');
-        
-        const whatsappLink = `https://wa.me/${formattedNumber}?text=${encodeURIComponent(mensaje)}`;
-        const btnWsp = document.getElementById("btn-wsp");
-        if (btnWsp) {
-          btnWsp.href = whatsappLink;
-          console.log("WhatsApp link actualizado:", whatsappLink);
-        } else {
-          console.error("No se encontró el elemento btn-wsp");
-        }
-      }
-    }
-
-    function trackClientEvent() {
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead', {
-          content_name: 'WhatsApp Button Click',
-          content_category: 'Engagement',
-        }); // Evento de conversión personalizado "Lead"
-      }
-    }
-
-    function trackWhatsAppLeadEvent() {
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead', {
-          content_name: 'WhatsApp Button Click',
-          content_category: 'Engagement',
-        });
-        console.log('Evento Lead enviado a Meta Pixel');
-      } else {
-        console.warn('Meta Pixel no está disponible');
-      }
-    }
-
-    // Menu toggle logic
-    const menuButton = document.getElementById("menu-button");
-    const menuPanel = document.getElementById("menu-panel");
-    const menuOverlay = document.getElementById("menu-overlay");
-
-    menuButton.addEventListener("click", () => {
-      menuPanel.classList.toggle("-translate-x-full");
-      menuOverlay.classList.toggle("hidden");
-    });
-
-    menuOverlay.addEventListener("click", () => {
-      menuPanel.classList.add("-translate-x-full");
-      menuOverlay.classList.add("hidden");
-    });
-  </script>
 </body>
+
+<!-- Mirrored from redluxor.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Jun 2025 16:46:08 GMT -->
 </html>
